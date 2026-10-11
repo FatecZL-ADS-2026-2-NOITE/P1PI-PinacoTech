@@ -120,3 +120,32 @@
 }
 
 /* ===== FIM MATTEUS ===== */
+
+/* ===== MATTEUS: RESPONSIVIDADE ===== */
+
+@media (max-width: 400px) {
+
+    .janela-detalhe {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #imagemItem {
+        height: 160px;
+    }
+
+    #nomeItem {
+        font-size: 20px;
+    }
+
+    .janela-detalhe p {
+        font-size: 14px;
+    }
+
+    #botaoVoltar {
+        font-size: 14px;
+    }
+
+}
+
+/* ===== FIM MATTEUS: RESPONSIVIDADE ===== */
