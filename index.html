@@ -2,61 +2,30 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio Digital da Cantina</title>
-
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="footer/styles.css">
 </head>
+<body> 
+  <!-- ===== JOSÉ MARIO: cabeçalho ===== -->
+  <header id="cabecalho">
+    <div class="cabecalho-conteudo">
+      <div class="marca">
+        <h1>Cardápio Digital</h1>
+        <p>Cantina da Fatec</p>
+      </div>
 
-<body>
-    <!-- ===== JOSÉ MARIO: cabeçalho ===== -->
-    <header id="cabecalho"></header>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#controles">Buscar</a></li>
+          <li><a href="#lista">Cardápio</a></li>
+          <li><a href="#categorias">Categorias</a></li>
+        </ul>
+    </nav>
+  </header> 
 
-
-    <main>
-        <!-- ===== PABLO: busca e filtros ===== -->
-        <section id="controles">
-            <input type="text" id="busca" placeholder="Buscar..." oninput="filtrar()">
-            <select id="filtro-categoria" onchange="filtrar()">
-                <option value="">Todas as categorias</option>
-                <option value="salgado">Salgado</option>
-                <option value="doce">Doce</option>
-                <option value="bebida">Bebida</option>
-            </select>
-            <div id="filtro-preco">
-                <label for="preco-minimo">Preço mínimo:</label>
-                <input type="number" id="preco-minimo" min="0" step="0.01" onchange="filtrar()">
-                <label for="preco-maximo">Preço máximo:</label>
-                <input type="number" id="preco-maximo" min="0" step="0.01" onchange="filtrar()">
-            </div>
-            <label>
-                <input type="checkbox" id="filtro-vegetariano" onchange="filtrar()">
-                Apenas vegetarianos
-            </label>
-        </section>
-
-        <!-- ===== NICOLAS: lista de cartões ===== -->
-        <section id="lista">
-            <div id="cartoes" class="grade-cartoes"></div>
-
-            <p id="mensagemVazia" hidden>
-                Nenhum item encontrado. Tente outro nome, troque a categoria ou aumente o preço máximo.
-            </p>
-
-            <p id="contador"></p>
-        </section>
-
-        <!-- ===== MATTEUS: detalhe do item ===== -->
-        <aside id="detalhes" hidden>
-
-            <div class="janela-detalhe" role="dialog" aria-modal="true" aria-labelledby="nomeItem">
-
-                <button id="fecharDetalhe" type="button" aria-label="Fechar detalhes" onclick="closeDetails()">
-                    X
-                </button>
-
-                <img id="imagemItem" alt="Foto do produto">
+    </div>
 
                 <h2 id="nomeItem"></h2>
 
@@ -66,44 +35,13 @@
 
                 <hr>
 
-                <p>
-                    Categoria:
-                    <span id="categoriaItem"></span>
-                </p>
+  </main> 
+  
+  <!-- ===== JOSÉ MARIO: rodapé ===== -->
+<footer id="rodape"></footer>
 
-                <p>
-                    Vegetariano:
-                    <span id="vegetarianoItem"></span>
-                </p>
-
-                <p>
-                    Calorias:
-                    <span id="caloriasItem"></span> kcal
-                </p>
-
-                <p>
-                    Disponibilidade:
-                    <span id="disponivelItem"></span>
-                </p>
-
-                <p>
-                    <span id="descricaoItem"></span>
-                </p>
-
-                <button id="botaoVoltar" type="button" onclick="closeDetails()">
-                    Voltar ao cardápio
-                </button>
-
-            </div>
-
-        </aside>
-
-    </main>
-
-    <!-- ===== JOSÉ MARIO: rodapé ===== -->
-    <footer id="rodape"></footer>
-    <script src="dados.js"></script>
-    <script src="script.js"></script>
+  <script src="footer/dados.js">
+  </script> <script src="footer/script.js"></script> 
 </body>
 
 </html>
