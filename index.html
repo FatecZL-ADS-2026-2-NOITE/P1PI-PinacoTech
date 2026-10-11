@@ -1,76 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Digital da Cantina</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body> 
-  <!-- ===== JOSÉ MARIO: cabeçalho ===== -->
-  <header id="cabecalho"></header> 
+
+<body>
+    <!-- ===== JOSÉ MARIO: cabeçalho ===== -->
+    <header id="cabecalho"></header>
 
 
-  <main>
-     <!-- ===== PABLO: busca e filtros ===== -->
-    <section id="controles"></section> 
+    <main>
+        <!-- ===== PABLO: busca e filtros ===== -->
+        <section id="controles">
+            <input type="text" id="busca" placeholder="Buscar..." oninput="filtrar()">
+            <select id="filtro-categoria" onchange="filtrar()">
+                <option value="">Todas as categorias</option>
+                <option value="salgado">Salgado</option>
+                <option value="doce">Doce</option>
+                <option value="bebida">Bebida</option>
+            </select>
+            <div id="filtro-preco">
+                <label for="preco-minimo">Preço mínimo:</label>
+                <input type="number" id="preco-minimo" min="0" step="0.01" onchange="filtrar()">
+                <label for="preco-maximo">Preço máximo:</label>
+                <input type="number" id="preco-maximo" min="0" step="0.01" onchange="filtrar()">
+            </div>
+            <label>
+                <input type="checkbox" id="filtro-vegetariano" onchange="filtrar()">
+                Apenas vegetarianos
+            </label>
+        </section>
 
-    <!-- ===== NICOLAS: lista de cartões ===== --> 
-    <section id="lista"></section>
+        <!-- ===== NICOLAS: lista de cartões ===== -->
+        <section id="lista">
+            <div id="cartoes" class="grade-cartoes"></div>
 
-     <!-- ===== MATTEUS: detalhe do item ===== -->
-    <aside id="detalhe"></aside>
-    <aside id="detalhe" hidden>
+            <p id="mensagemVazia" hidden>
+                Nenhum item encontrado. Tente outro nome, troque a categoria ou aumente o preço máximo.
+            </p>
 
-    <div class="janela-detalhe" role="dialog"
-         aria-modal="true" aria-labelledby="nomeItem">
+            <p id="contador"></p>
+        </section>
 
-        <button id="fecharDetalhe" type="button" aria-label="Fechar detalhes">
-            X
-        </button>
+        <!-- ===== MATTEUS: detalhe do item ===== -->
+        <aside id="detalhes" hidden>
 
-        <img id="imagemItem" alt="Foto do produto">
+            <div class="janela-detalhe" role="dialog" aria-modal="true" aria-labelledby="nomeItem">
 
-        <h2 id="nomeItem"></h2>
+                <button id="fecharDetalhe" type="button" aria-label="Fechar detalhes" onclick="closeDetails()">
+                    X
+                </button>
 
-        <p class="preco-detalhe">
-            R$ <span id="precoItem"></span>
-        </p>
+                <img id="imagemItem" alt="Foto do produto">
 
-        <hr>
+                <h2 id="nomeItem"></h2>
 
-        <p>
-            Categoria:
-            <span id="categoriaItem"></span>
-        </p>
+                <p class="preco-detalhe">
+                    R$ <span id="precoItem"></span>
+                </p>
 
-        <p>
-            Vegetariano:
-            <span id="vegetarianoItem"></span>
-        </p>
+                <hr>
 
-        <p>
-            Calorias:
-            <span id="caloriasItem"></span> kcal
-        </p>
+                <p>
+                    Categoria:
+                    <span id="categoriaItem"></span>
+                </p>
 
-        <p>
-            Disponibilidade:
-            <span id="disponivelItem"></span>
-        </p>
+                <p>
+                    Vegetariano:
+                    <span id="vegetarianoItem"></span>
+                </p>
 
-        <button id="botaoVoltar" type="button">
-            Voltar ao cardápio
-        </button>
+                <p>
+                    Calorias:
+                    <span id="caloriasItem"></span> kcal
+                </p>
 
-    </div>
+                <p>
+                    Disponibilidade:
+                    <span id="disponivelItem"></span>
+                </p>
 
-</aside>
+                <p>
+                    <span id="descricaoItem"></span>
+                </p>
 
-  </main> 
-  
-  <!-- ===== JOSÉ MARIO: rodapé ===== --> 
-  <footer id="rodape"></footer> 
-  <script src="footer/dados.js">
-  </script> <script src="footer/script.js"></script> 
+                <button id="botaoVoltar" type="button" onclick="closeDetails()">
+                    Voltar ao cardápio
+                </button>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- ===== JOSÉ MARIO: rodapé ===== -->
+    <footer id="rodape"></footer>
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
