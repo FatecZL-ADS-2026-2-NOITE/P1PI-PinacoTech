@@ -19,6 +19,52 @@
 
      <!-- ===== MATTEUS: detalhe do item ===== -->
     <aside id="detalhe"></aside>
+    <aside id="detalhe" hidden>
+
+    <div class="janela-detalhe" role="dialog"
+         aria-modal="true" aria-labelledby="nomeItem">
+
+        <button id="fecharDetalhe" type="button" aria-label="Fechar detalhes">
+            X
+        </button>
+
+        <img id="imagemItem" alt="Foto do produto">
+
+        <h2 id="nomeItem"></h2>
+
+        <p class="preco-detalhe">
+            R$ <span id="precoItem"></span>
+        </p>
+
+        <hr>
+
+        <p>
+            Categoria:
+            <span id="categoriaItem"></span>
+        </p>
+
+        <p>
+            Vegetariano:
+            <span id="vegetarianoItem"></span>
+        </p>
+
+        <p>
+            Calorias:
+            <span id="caloriasItem"></span> kcal
+        </p>
+
+        <p>
+            Disponibilidade:
+            <span id="disponivelItem"></span>
+        </p>
+
+        <button id="botaoVoltar" type="button">
+            Voltar ao cardápio
+        </button>
+
+    </div>
+
+</aside>
 
   </main> 
   
