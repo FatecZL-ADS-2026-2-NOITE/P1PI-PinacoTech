@@ -1,0 +1,15 @@
+:root {
+  --cor-principal: #FFEEDD;   
+  --cor-fundo: #D8BD8A;       
+  --cor-texto: #202020;     
+
+  --cor-escura: #4A2C1A;      
+  --cor-destaque: #8C3B1E;    
+  --cor-destaque-claro: #F3C98B; 
+  --cor-borda: #B8A06C;    
+  --cor-vegetariano: #2E6B34; 
+  --cor-texto-suave: #6B5A45; 
+
+  --fonte-titulo: Georgia, serif;
+  --fonte-texto: Arial, sans-serif;
+}
