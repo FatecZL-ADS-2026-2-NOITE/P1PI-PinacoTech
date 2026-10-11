@@ -81,4 +81,6 @@ function closeDetails() {
     document.getElementById("detalhes").hidden = true;
 }
 
-loadItems();
+document.addEventListener("DOMContentLoaded", () => {
+    loadItems();
+});
