@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cardápio Digital da Cantina</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/footer/styles.css">
 </head>
 
 <body>
@@ -20,18 +20,19 @@
 
       <nav aria-label="Navegação principal">
         <ul>
-          <li><a href="#controles">Buscar</a></li>
+          <li class="item-busca">
+            <label for="busca" class="sr-only">Buscar no cardápio</label>
+            <input type="search" id="busca" placeholder="Pesquisar no cardápio" oninput="filtrar()">
+          </li>
           <li><a href="#lista">Cardápio</a></li>
           <li><a href="#categorias">Categorias</a></li>
         </ul>
       </nav>
     </header> 
 
-
     <main>
         <!-- ===== PABLO: busca e filtros ===== -->
         <section id="controles">
-            <input type="text" id="busca" placeholder="Buscar..." oninput="filtrar()">
             <select id="filtro-categoria" onchange="filtrar()">
                 <option value="">Todas as categorias</option>
                 <option value="salgado">Salgado</option>
@@ -114,8 +115,47 @@
 
     </main>
 
-    <!-- ===== JOSÉ MARIO: rodapé ===== -->
-    <footer id="rodape"></footer>
+        <!-- ===== JOSÉ MARIO: rodapé ===== -->
+        <footer id="rodape">
+            <div class="rodape-conteudo">
+                <div class="rodape-projeto">
+                    <h2>Cardápio Digital</h2>
+                    <p>Um cardápio para a Cantina da Fatec: o aluno vê preço, categoria e opções vegetarianas pelo celular, antes de chegar ao balcão.</p>
+                </div>
+
+                <div>
+                    <h2>Integrantes</h2>
+                    <ul>
+                        <li>Pablo Ornelas Pimentel</li>
+                        <li>Nicolas Domingos</li>
+                        <li>Matteus Lino</li>
+                        <li>José Mario</li>
+                    </ul>
+                </div>
+
+                <nav aria-label="Navegação do rodapé">
+                    <h2>Navegação</h2>
+                    <ul>
+                        <li><a href="#cabecalho">Início</a></li>
+                        <li><a href="#lista">Cardápio</a></li>
+                    </ul>
+                </nav>
+
+                <div>
+                    <h2>Disciplina</h2>
+                    <ul>
+                        <li>Projeto Integrador</li>
+                        <li>ADS · Fatec Zona Leste</li>
+                        <li>Prof. Rodrigo dos Santos Faustino</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rodape-base">
+                <p>PicanoTech © 2026</p>
+                <p>Projeto Desafio 01 · Vitrine Interativa</p>
+            </div>
+        </footer>
     <script src="dados.js"></script>
     <script src="script.js"></script>
 </body>
