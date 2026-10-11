@@ -379,3 +379,145 @@ body {
 }
 
 /* ===== FIM MATTEUS: RESPONSIVIDADE ===== */
+
+
+
+#lista {
+  padding: 30px;
+}
+/* ===== Grade ===== */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* ===== Cartão ===== */
+.cartao {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.cartao[hidden] {
+  display: none;
+}
+
+.cartao-foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.cartao-corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px;
+  flex: 1;
+}
+
+.cartao-categoria {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.cartao-nome {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.cartao-preco {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.cartao-selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+  margin-top: auto;
+}
+
+.selo {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.selo-vegetariano {
+  background: #d9f2d9;
+  color: #1b5e20;
+}
+
+.selo-indisponivel {
+  background: #f8d7d7;
+  color: #555454;
+}
+.cartao:has(.selo-indisponivel) .cartao-foto {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* ===== Botão ===== */
+.cartao-botao {
+  margin-top: 8px;
+  padding: 9px;
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  color: #000000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cartao-botao:hover {
+  background: var(--cor-destaque-claro);
+}
+
+/* ===== Mensagem vazia e contador ===== */
+#mensagemVazia {
+  text-align: center;
+  padding: 32px;
+  color: #777;
+}
+
+#contador {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 1000px) {
+  .grade-cartoes { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 750px) {
+  .grade-cartoes { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .grade-cartoes { grid-template-columns: 1fr; }
+}
