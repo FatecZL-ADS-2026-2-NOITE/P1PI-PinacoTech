@@ -31,6 +31,7 @@
     </header> 
 
     <main>
+        <section id="lista">
         <!-- ===== PABLO: busca e filtros ===== -->
         <section id="controles">
             <select id="filtro-categoria" onchange="filtrar()">
@@ -52,14 +53,14 @@
         </section>
 
         <!-- ===== NICOLAS: lista de cartões ===== -->
-        <section id="lista">
+        
+            <p id="contador"></p>
             <div id="cartoes" class="grade-cartoes"></div>
 
             <p id="mensagemVazia" hidden>
                 Nenhum item encontrado. Tente outro nome, troque a categoria ou aumente o preço máximo.
             </p>
 
-            <p id="contador"></p>
         </section>
 
         <!-- ===== MATTEUS: detalhe do item ===== -->
