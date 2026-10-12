@@ -130,5 +130,16 @@ const ITENS = [
     disponivel: true,
     descricao: "Arroz, feijão, salada e carne moída refogada com legumes, do jeito caseiro. Um prato que sustenta e cabe no bolso.",
     imageUrl: "img/pf-de-carne-moida.jpg"
+  },
+  {
+    id: 13,
+    item: "Paçoca do samurai",
+    categoria: "Doce",
+    preco: 8,
+    vegetariano: true,
+    calorias: 110,
+    disponivel: false,
+    descricao: "Paçoquita do samurai, doce, mas não ao ponto de ser enjuativa. Tão gostosa que você não vai querer nem compartilhá-la com seus colegas",
+    imageUrl: "img/pacoca-samurai.jpg"
   }
 ];
