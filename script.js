@@ -74,11 +74,17 @@ function openDetails(itemId) {
     document.getElementById("vegetarianoItem").textContent = item.vegetariano ? "Sim" : "Não";
     document.getElementById("disponivelItem").textContent = item.disponivel ? "Disponível" : "Indisponível";
 
+    const larguraBarra = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = larguraBarra + "px";
+    document.body.style.overflow = "hidden";
+    //travei a tela pra não scrollar com o modal na frente, esse padding é pra não dar um pulo quando o scroll sumir
     document.getElementById("detalhes").hidden = false;
 }
 
 function closeDetails() {
     document.getElementById("detalhes").hidden = true;
+    document.body.style.overflow = ""; // destrava
+    document.body.style.paddingRight = "";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
