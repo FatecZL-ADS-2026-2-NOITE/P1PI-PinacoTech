@@ -233,7 +233,7 @@ body {
 /* ===== MATTEUS: DETALHE DO ITEM ===== */
 
 /* Fundo escurecido atrás da janela */
-#detalhe {
+#detalhes {
     position: fixed;
     top: 0;
     left: 0;
@@ -247,7 +247,7 @@ body {
 }
 
 /* Mantém a janela oculta inicialmente */
-#detalhe[hidden] {
+#detalhes[hidden] {
     display: none;
 }
 
