@@ -45,14 +45,13 @@ body {
 }
 
 .cabecalho-conteudo {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 12px 16px;
+  max-width: none;
+  margin: 0;
+  padding: 12px clamp(16px, 2vw, 32px);  /* deixei a logo um pouco mais pra esquerda pra alinhar */
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 8px 24px;
+  gap: 12px 24px;
 }
 
 .marca h1 {
@@ -76,14 +75,18 @@ body {
 }
 
 #cabecalho nav a {
-  display: block;
-  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
   color: var(--cor-escura);
   text-decoration: none;
   border: 1px solid var(--cor-escura);
   border-radius: 999px;
 }
-
+#cabecalho nav a,
+#busca {
+  height: 40px;
+}
 #cabecalho nav a:hover,
 #cabecalho nav a:focus {
   background: var(--cor-escura);
@@ -185,12 +188,12 @@ body {
 }
 
 .item-busca {
-  flex: 1 1 220px;
+  flex: 0 0 300px;
 }
 
 #busca {
   width: 100%;
-  min-width: 180px;
+  min-width: 0;
   padding: 8px 16px 8px 40px;
   font-family: var(--fonte-texto);
   font-size: 1rem;
