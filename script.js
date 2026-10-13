@@ -1,3 +1,4 @@
+// deixa o texto em minúsculas e sem acentos, para "pao" achar "pão de queijo"
 function normalize(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
