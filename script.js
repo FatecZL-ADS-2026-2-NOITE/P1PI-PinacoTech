@@ -1,9 +1,10 @@
-function normalize(text) {
+// Deixa o texto em minúsculas e sem acentos, para "pao" achar "Pão de queijo"
+function normalizarTexto(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 }
 
 function filtrar() {
-    const busca = normalize(document.getElementById("busca").value);
+    const busca = normalizarTexto(document.getElementById("busca").value);
     const categoria = document.getElementById("filtro-categoria").value;
     const precoMinimo = parseFloat(document.getElementById("preco-minimo").value) || 0;
     const campoMax = document.getElementById("preco-maximo").value;
@@ -17,7 +18,7 @@ function filtrar() {
         const id = parseInt(cartao.dataset.id);
         const item = ITENS.find(i => i.id === id);
 
-        const correspondeBusca = normalize(item.item).includes(busca);
+        const correspondeBusca = normalizarTexto(item.item).includes(busca);
         const correspondeCategoria = categoria === "" || item.categoria.toLowerCase() === categoria;
         const correspondePreco = item.preco >= precoMinimo && item.preco <= precoMaximo;
         const correspondeVegetariano = !apenasVegetarianos || item.vegetariano;

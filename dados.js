@@ -139,7 +139,7 @@ const ITENS = [
     vegetariano: true,
     calorias: 110,
     disponivel: false,
-    descricao: "Paçoquita do samurai, doce, mas não ao ponto de ser enjuativa. Tão gostosa que você não vai querer nem compartilhá-la com seus colegas",
+    descricao: "Paçoca do samurai: doce na medida, sem ser enjoativa. Tão gostosa que você não vai querer dividir com os colegas.",
     imageUrl: "img/pacoca-samurai.jpg"
   }
 ];
