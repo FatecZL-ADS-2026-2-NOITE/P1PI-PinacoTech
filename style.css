@@ -593,3 +593,23 @@ body {
   flex-direction: column;
   gap: 0px;
 }
+
+@media (max-width: 1000px) {
+  #controles {
+    max-width: 700px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #filtro-preco {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    row-gap: 4px;
+  }
+
+  #filtro-preco input,
+  #filtro-categoria {
+    width: 100%;
+  }
+}
