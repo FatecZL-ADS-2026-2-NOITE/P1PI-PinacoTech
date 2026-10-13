@@ -1,8 +1,13 @@
+function normalize(text) {
+    return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
 function filtrar() {
-    const busca = document.getElementById("busca").value.toLowerCase();
+    const busca = normalize(document.getElementById("busca").value);
     const categoria = document.getElementById("filtro-categoria").value;
     const precoMinimo = parseFloat(document.getElementById("preco-minimo").value) || 0;
-    const precoMaximo = parseFloat(document.getElementById("preco-maximo").value) || Infinity;
+    const campoMax = document.getElementById("preco-maximo").value;
+    const precoMaximo = campoMax === "" ? Infinity : parseFloat(campoMax);
     const apenasVegetarianos = document.getElementById("filtro-vegetariano").checked;
 
     const cartoes = document.querySelectorAll(".cartao");
@@ -12,7 +17,7 @@ function filtrar() {
         const id = parseInt(cartao.dataset.id);
         const item = ITENS.find(i => i.id === id);
 
-        const correspondeBusca = item.item.toLowerCase().includes(busca);
+        const correspondeBusca = normalize(item.item).includes(busca);
         const correspondeCategoria = categoria === "" || item.categoria.toLowerCase() === categoria;
         const correspondePreco = item.preco >= precoMinimo && item.preco <= precoMaximo;
         const correspondeVegetariano = !apenasVegetarianos || item.vegetariano;
@@ -45,7 +50,7 @@ function loadItems() {
                     <div class="cartao-corpo">
                         <p class="cartao-categoria">${item.categoria}</p>
                         <h3 class="cartao-nome">${item.item}</h3>
-                        <p class="cartao-preco">R$ ${item.preco.toFixed(2)}</p>
+                        <p class="cartao-preco">R$ ${item.preco.toFixed(2).replace(".", ",")}</p>
 
                         <div class="cartao-selos">
                             ${item.vegetariano ? `<span class="selo selo-vegetariano">Vegetariano</span>` : ''}
@@ -68,7 +73,7 @@ function openDetails(itemId) {
     document.getElementById("imagemItem").alt = `Foto de ${item.item}`;
     document.getElementById("nomeItem").textContent = item.item;
     document.getElementById("categoriaItem").textContent = item.categoria;
-    document.getElementById("precoItem").textContent = `${item.preco.toFixed(2)}`;
+    document.getElementById("precoItem").textContent = `${item.preco.toFixed(2).replace(".", ",")}`;
     document.getElementById("caloriasItem").textContent = `${item.calorias}`;
     document.getElementById("descricaoItem").textContent = item.descricao;
     document.getElementById("vegetarianoItem").textContent = item.vegetariano ? "Sim" : "Não";
